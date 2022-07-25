@@ -10,6 +10,7 @@ const forecast = require("./utils/forecast");
 //console.log(path.join(__dirname, "../public"));
 
 const app = express();
+const port= process.env.PORT || 3000
 
 //define paths for express config
 const publicDirectoryPath = path.join(__dirname, "../public")
@@ -104,6 +105,6 @@ app.get("*", (req,res)=>{
   res.render("404-error.hbs",{title:"404", name: "Ali", errortype: "404 error"})
 })
 
-app.listen(3000, () => {
-  console.log("server is running");
+app.listen(port, () => {
+  console.log("server is running on port "+port);
 });
